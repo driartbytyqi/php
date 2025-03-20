@@ -49,6 +49,10 @@
         default:
         echo "invalid age input.";
     }
+    $day = "e enjte"
+    switch($day){
+        case($day == "e enjte");
+    }
     ?>
 </body>
 </html>
