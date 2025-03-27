@@ -48,17 +48,59 @@
     // $test = "the max of $a and $b is $test"; 
 ?>
 <?php
-function divisible($n){
-    if(($n % 2)== 0){
-        return"$n eshte e plot[jrstushem me 2";
+// function divisible($n){
+//     if(($n % 2)== 0){
+//         return"$n eshte e plot[jrstushem me 2";
 
-    }
-    else{
-         return"$n nuk eshte e plot[jrstushem me 2";
-    }
-}
-print_r(divisible(4). "<br>");
-print_r(divisible(35). "<br>");
-print_r(divisible(16). "<br>");
-print_r(divisible(3). "<br>");
+//     }
+//     else{
+//          return"$n nuk eshte e plot[jrstushem me 2";
+//     }
+// }
+// print_r(divisible(4). "<br>");
+// print_r(divisible(35). "<br>");
+// print_r(divisible(16). "<br>");
+// print_r(divisible(3). "<br>");
 ?>
+<?php 
+    // $x=5;
+    // function draw(){
+    //     $y = 10;
+    //     echo $y;
+    // }
+    // echo "\n, $x";
+    // draw();
+?>
+<?php
+    // $x = 5;
+    // $y = 10;
+
+    // function sum(){
+    //     global $x,$y;
+    //     $y = $x + $y;
+
+    // }
+    // sum();
+    // echo $y;
+    ?>
+<?php 
+    // function counter(){
+    //     static $count = 0;
+    //     $count++;
+    //     echo "vlera e count is : $count <br>";
+    // }
+    // counter();
+    // counter();
+?>
+<?php 
+     $sports= ['real madrid','benfico','besiktas'];
+     echo end ($sports);
+     echo count($sports);
+?>
+<?php 
+     $sports= ['real madrid','benfico','besiktas'];
+    $len=count($sports);
+    for($i=0; $i<=$len; $i++){
+        echo $sports[$i],"\n";
+    }
+     
