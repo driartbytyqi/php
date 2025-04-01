@@ -93,14 +93,35 @@
     // counter();
 ?>
 <?php 
-     $sports= ['real madrid','benfico','besiktas'];
-     echo end ($sports);
-     echo count($sports);
+    //  $sports= ['real madrid','benfico','besiktas'];
+    //  echo end ($sports);
+    //  echo count($sports);
 ?>
 <?php 
-     $sports= ['real madrid','benfico','besiktas'];
-    $len=count($sports);
-    for($i=0; $i<=$len; $i++){
-        echo $sports[$i],"\n";
-    }
-     
+    //  $sports= ['real madrid','benfico','besiktas'];
+    // $len=count($sports);
+    // for($i=0; $i<=$len; $i++){
+    //     echo $sports[$i],"\n";
+    // }
+?>
+<?php
+//     $sports = ['real madrit','barcelona','barcelona','benfice','chelse','arsenal'];
+
+//     $output = array_slice($sports, 2);
+//     $output1 = array_slice($sports, 3);
+//     $output2 = array_slice($sports, -2,1);
+
+// var_dump($output, $output1,$output2);
+?>
+<?php
+// $sports = [12,24,36,48];
+
+// var_dump(array_sum($sport));
+
+?>
+<?php
+$sports = [25,30,25,26,20,28,25];
+$average_temp = array_sum($temp)/7;
+
+echo ($average_temp)
+?>
