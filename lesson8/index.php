@@ -13,7 +13,7 @@ try{
     $pdo -> exec($sql);
     echo "table created successfuly";
 }
-catch (Exeption $e){
+catch (Exception $e){
     echo "error creating table:". $e ->getMessage();
 }
 
