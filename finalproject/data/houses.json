@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Modern Family Home",
+        "price": 350000,
+        "location": "123 Oak Street, Springfield",
+        "description": "A beautiful 3-bedroom family home with a large backyard and a renovated kitchen."
+    },
+    {
+        "title": "Luxury Condo",
+        "price": 500000,
+        "location": "456 Maple Avenue, Capital City",
+        "description": "Downtown condo with modern amenities, rooftop access, and stunning city views."
+    },
+    {
+        "title": "Cozy Cottage",
+        "price": 200000,
+        "location": "789 Birch Lane, Smalltown",
+        "description": "A quaint 2-bedroom cottage with a fireplace and private garden."
+    },
+    {
+        "title": "Beachfront Villa",
+        "price": 1200000,
+        "location": "321 Seaside Blvd, Miami",
+        "description": "Luxury 5-bedroom beachfront villa with private pool and ocean view."
+    },
+    {
+        "title": "Urban Apartment",
+        "price": 310000,
+        "location": "999 City Tower, Downtown",
+        "description": "2-bedroom apartment in the heart of downtown, close to shopping and transit."
+    },
+    {
+        "title": "Country Farmhouse",
+        "price": 450000,
+        "location": "55 Green Fields, Countryside",
+        "description": "Spacious 4-bedroom farmhouse with barn, pond, and over 5 acres of land."
+    }
+]
