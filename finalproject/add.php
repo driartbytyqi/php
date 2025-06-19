@@ -1,49 +1,62 @@
 <?php
-$file = 'data/houses.json';
-$houses = json_decode(file_get_contents($file), true);
+require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $uploadDir = 'uploads/';
-    $imagePath = '';
+    // Collect and sanitize form data
+    $title = $_POST['title'];
+    $price = $_POST['price'];
+    $location = $_POST['location'];
+    $description = $_POST['description'];
 
-    if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-        $tmpName = $_FILES['photo']['tmp_name'];
-        $filename = basename($_FILES['photo']['name']);
-        $targetFile = $uploadDir . time() . "_" . $filename;
+    // Handle image upload
+    $imageName = '';
+    if (!empty($_FILES['image']['name'])) {
+        $imageName = time() . '_' . basename($_FILES['image']['name']);
+        $targetPath = 'uploads/' . $imageName;
 
-        if (move_uploaded_file($tmpName, $targetFile)) {
-            $imagePath = $targetFile;
+        if (!move_uploaded_file($_FILES['image']['tmp_name'], $targetPath)) {
+            $imageName = ''; // fallback to no image if upload fails
         }
     }
 
-    $new = [
-        'title' => $_POST['title'],
-        'price' => $_POST['price'],
-        'location' => $_POST['location'],
-        'description' => $_POST['description'],
-        'image' => $imagePath
-    ];
-    $houses[] = $new;
-    file_put_contents($file, json_encode($houses, JSON_PRETTY_PRINT));
-    header("Location: index.php");
+    // Insert into database
+    $stmt = $pdo->prepare("INSERT INTO listings (title, price, location, description, image) VALUES (?, ?, ?, ?, ?)");
+    $stmt->execute([$title, $price, $location, $description, $imageName]);
+
+    header('Location: index.php'); // redirect after submit
     exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add House</title>
+    <title>Add New Listing</title>
+    <link rel="stylesheet" href="assets/style.css"> <!-- optional if you have styling -->
 </head>
 <body>
-    <h1>Add New House</h1>
-    <form method="POST" enctype="multipart/form-data">
-        <label>Title: <input type="text" name="title" required></label><br><br>
-        <label>Price: <input type="number" name="price" required></label><br><br>
-        <label>Location: <input type="text" name="location" required></label><br><br>
-        <label>Description:<br><textarea name="description" rows="4" cols="40"></textarea></label><br><br>
-        <label>Photo: <input type="file" name="photo" accept="image/*"></label><br><br>
-        <button type="submit">Add House</button>
-    </form>
-    <p><a href="index.php">← Back to listings</a></p>
+    <div class="container">
+        <h1>➕ Add New Property Listing</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label>Title:</label><br>
+            <input type="text" name="title" required><br><br>
+
+            <label>Price:</label><br>
+            <input type="number" name="price" required><br><br>
+
+            <label>Location:</label><br>
+            <input type="text" name="location" required><br><br>
+
+            <label>Description:</label><br>
+            <textarea name="description" required></textarea><br><br>
+
+            <label>Image (optional):</label><br>
+            <input type="file" name="image"><br><br>
+
+            <input type="submit" value="Add Listing">
+        </form>
+        <br>
+        <a href="index.php">⬅ Back to Listings</a>
+    </div>
 </body>
 </html>

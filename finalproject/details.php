@@ -2,7 +2,7 @@
 $houses = json_decode(file_get_contents('data/houses.json'), true);
 $id = $_GET['id'] ?? 0;
 
-if (!isset($houses[$id])) {
+if (!isset($houses[$id])) { 
     echo "House not found.";
     exit;
 }

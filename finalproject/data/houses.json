@@ -34,5 +34,19 @@
         "price": 450000,
         "location": "55 Green Fields, Countryside",
         "description": "Spacious 4-bedroom farmhouse with barn, pond, and over 5 acres of land."
+    },
+    {
+        "title": "baba",
+        "price": "222248",
+        "location": "emshir",
+        "description": "shum e mir",
+        "image": ""
+    },
+    {
+        "title": "f8s",
+        "price": "526153",
+        "location": "7125",
+        "description": "uzdu",
+        "image": ""
     }
 ]
